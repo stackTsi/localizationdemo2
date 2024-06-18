@@ -1,12 +1,9 @@
 package org.example;
 
 import org.example.BuggySort.BBinarySearch;
-import org.example.BuggySort.BBubbleSort;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class BinarySortTest {
 
@@ -31,7 +28,7 @@ public class BinarySortTest {
         int target = 9;
         int expected = 4;
         int result = searcher.binarySearch(data, target);
-        assertArrayEquals(new int[]{expected}, new int[]{result});
+        assertEquals("Should find element at index 4.", expected, result);
     }
 
     @Test
@@ -41,7 +38,7 @@ public class BinarySortTest {
         int target = 5;
         int expected = 2;
         int result = searcher.binarySearch(data, target);
-        assertEquals(expected, result, "Should find element at the middle index.");
+        assertEquals("Should find element at the middle index.", expected, result);
     }
 
     @Test
@@ -51,7 +48,7 @@ public class BinarySortTest {
         int target = 1;
         int expected = 0;
         int result = searcher.binarySearch(data, target);
-        assertEquals(expected, result, "Should find element at the start index.");
+        assertEquals("Should find element at the start index.", expected, result);
     }
 
     @Test
@@ -61,7 +58,7 @@ public class BinarySortTest {
         int target = 9;
         int expected = 4;
         int result = searcher.binarySearch(data, target);
-        assertEquals(expected, result, "Should find element at the last index.");
+        assertEquals("Should find element at the last index.", expected, result);
     }
 
     @Test
@@ -71,7 +68,7 @@ public class BinarySortTest {
         int target = 4;
         int expected = -1;
         int result = searcher.binarySearch(data, target);
-        assertEquals(expected, result, "Should not find element and return -1.");
+        assertEquals("Should not find element and return -1.", expected, result);
     }
 
     @Test
@@ -81,6 +78,6 @@ public class BinarySortTest {
         int target = 3;
         int expected = -1;
         int result = searcher.binarySearch(data, target);
-        assertEquals(expected, result, "Should handle empty array by returning -1.");
+        assertEquals("Should handle empty array by returning -1.", expected, result);
     }
 }

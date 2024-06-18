@@ -1,9 +1,10 @@
 package org.example;
 
 import org.example.BuggySort.BBubbleSort;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
+import static org.junit.Assert.assertArrayEquals;
 
 public class BubbleSortTest {
     //Bubble Sort
@@ -25,9 +26,8 @@ public class BubbleSortTest {
         int[] input = {64, 34, 25, 12, 22, 11, 90};
         int[] expected = {11, 12, 22, 25, 34, 64, 90};
         sorter.bubbleSort(input);
-        assertArrayEquals(expected, input);
+        assertArrayEquals("Array should be correctly sorted.", expected, input);
     }
-
 
     @Test
     public void testBubbleSortOrderedArray() {
@@ -35,7 +35,7 @@ public class BubbleSortTest {
         int[] input = {1, 2, 3, 4, 5};
         int[] expected = {1, 2, 3, 4, 5};
         sorter.bubbleSort(input);
-        assertArrayEquals(expected, input, "Array should remain unchanged.");
+        assertArrayEquals("Array should remain unchanged.", expected, input);
     }
 
     @Test
@@ -44,7 +44,7 @@ public class BubbleSortTest {
         int[] input = {5, 4, 3, 2, 1};
         int[] expected = {1, 2, 3, 4, 5};
         sorter.bubbleSort(input);
-        assertArrayEquals(expected, input, "Array should be sorted in ascending order.");
+        assertArrayEquals("Array should be sorted in ascending order.", expected, input);
     }
 
     @Test
@@ -53,7 +53,7 @@ public class BubbleSortTest {
         int[] input = {2, 2, 2, 2, 2};
         int[] expected = {2, 2, 2, 2, 2};
         sorter.bubbleSort(input);
-        assertArrayEquals(expected, input, "Array of identical elements should remain unchanged.");
+        assertArrayEquals("Array of identical elements should remain unchanged.", expected, input);
     }
 
     @Test
@@ -62,7 +62,7 @@ public class BubbleSortTest {
         int[] input = {-3, -1, -2, -5, -4};
         int[] expected = {-5, -4, -3, -2, -1};
         sorter.bubbleSort(input);
-        assertArrayEquals(expected, input, "Array should be sorted in ascending order with negative values.");
+        assertArrayEquals("Array should be sorted in ascending order with negative values.", expected, input);
     }
 
     @Test
@@ -71,7 +71,7 @@ public class BubbleSortTest {
         int[] input = {};
         int[] expected = {};
         sorter.bubbleSort(input);
-        assertArrayEquals(expected, input, "Empty array should remain unchanged.");
+        assertArrayEquals("Empty array should remain unchanged.", expected, input);
     }
 }
 
